@@ -12,6 +12,8 @@ class LRUCache {
     std::unordered_map<int, decltype(items.begin())> map;
     WALManager wal;
 
+    void put_no_log(int key, int value);
+
 public:
     LRUCache(size_t cap, const std::string &wal_path);
     void put(int key, int value);
