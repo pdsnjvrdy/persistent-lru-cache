@@ -7,7 +7,7 @@ int main() {
 
     // Test 1: put and get
     {
-        LRUCache cache(2);
+        LRUCache cache(2, "test.wal");
         cache.put(1, 100);
         cache.put(2, 200);
         int val;
@@ -19,7 +19,7 @@ int main() {
 
     // Test 2: Eviction when capacity exceeded
     {
-        LRUCache cache(2);
+        LRUCache cache(2, "test.wal");
         cache.put(1, 100);
         cache.put(2, 200);
         cache.put(3, 300);  // should evict key 1
@@ -40,7 +40,7 @@ int main() {
 
     // Test 3: Update existing key (should not evict)
     {
-        LRUCache cache(2);
+        LRUCache cache(2, "test.wal");
         cache.put(1, 100);
         cache.put(2, 200);
         cache.put(1, 111);           // update key 1
@@ -62,7 +62,7 @@ int main() {
 
     // Test 4: get updates access order (LRU moves)
     {
-        LRUCache cache(2);
+        LRUCache cache(2, "test.wal");
         cache.put(1, 100);
         cache.put(2, 200);
         int dummy;
