@@ -1,0 +1,4 @@
+Starting crash fuzz test (1000 cycles)...
+Completed 1000 puts without crash.
+FAIL: missing committed key 117250
+FAIL: data loss detected on cycle 1
